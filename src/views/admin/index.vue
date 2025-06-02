@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import FullScreen from "@/components/base/full-screen.vue";
 import Theme from "@/components/base/theme.vue";
 </script>
 
@@ -22,8 +23,8 @@ import Theme from "@/components/base/theme.vue";
         <div class="crumbs">crumbs</div>
         <div class="actions">
           <span>首页</span>
-          <span>全屏</span>
-          <theme />
+          <FullScreen />
+          <Theme />
           <span>用户</span>
         </div>
       </div>
@@ -77,7 +78,7 @@ import Theme from "@/components/base/theme.vue";
         }
       }
     }
-    
+
     .tabs{
       height: 30px;
       border-bottom: 1px solid var(--color-neutral-2);
