@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute()
 const list = ref<string[]>([])
 
 function initRoute() {
+  list.value = []
   for (const r of route.matched) {
     if (!r.meta.title) {
       continue
@@ -14,6 +15,10 @@ function initRoute() {
   }
 }
 initRoute()
+
+watch(() => route.path, () => {
+  initRoute()
+}, {immediate: true})
 </script>
 
 <template>

@@ -2,6 +2,7 @@
 import Breadcrumb from "@/components/admin/breadcrumb.vue";
 import FullScreen from "@/components/base/full-screen.vue";
 import Theme from "@/components/base/theme.vue";
+import UserDropdown from "@/components/base/user-dropdown.vue";
 </script>
 
 <template>
@@ -28,7 +29,7 @@ import Theme from "@/components/base/theme.vue";
           <span>首页</span>
           <FullScreen />
           <Theme />
-          <span>用户</span>
+          <UserDropdown />
         </div>
       </div>
       <div class="tabs">tabs</div>
@@ -75,7 +76,7 @@ import Theme from "@/components/base/theme.vue";
       align-items: center;
 
       .actions {
-        span {
+        >span {
           margin: 0 10px;
           &:last-child {
             margin-right: 0;
