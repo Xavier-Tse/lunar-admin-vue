@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import Theme from "@/components/base/theme.vue";
 </script>
 
 <template>
@@ -20,7 +20,12 @@
     <div class="container">
       <div class="head">
         <div class="crumbs">crumbs</div>
-        <div class="actions">actions</div>
+        <div class="actions">
+          <span>首页</span>
+          <span>全屏</span>
+          <theme />
+          <span>用户</span>
+        </div>
       </div>
       <div class="tabs">tabs</div>
       <div class="main">main</div>
@@ -32,6 +37,8 @@
 .admin_view {
   display: flex;
   width: 100%;
+  background-color: var(--color-bg-1);
+  color: var(--color-text-1);
 
   .aside {
     width: 240px;
@@ -60,7 +67,17 @@
       height: 60px;
       padding: 0 20px;
       align-items: center;
+
+      .actions {
+        span {
+          margin: 0 10px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
     }
+    
     .tabs{
       height: 30px;
       border-bottom: 1px solid var(--color-neutral-2);
@@ -68,9 +85,10 @@
       align-items: center;
       padding: 0 20px;
     }
+
     .main{
       padding: 20px;
-      background-color: var(--color-neutral-1);
+      background-color: var(--color-neutral-2);
       height: calc(100vh - 90px);
     }
   }
