@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Breadcrumb from "@/components/admin/breadcrumb.vue";
 import FullScreen from "@/components/base/full-screen.vue";
 import Theme from "@/components/base/theme.vue";
 </script>
@@ -20,7 +21,9 @@ import Theme from "@/components/base/theme.vue";
     </div>
     <div class="container">
       <div class="head">
-        <div class="crumbs">crumbs</div>
+        <div class="crumbs">
+          <Breadcrumb />
+        </div>
         <div class="actions">
           <span>首页</span>
           <FullScreen />
@@ -29,7 +32,9 @@ import Theme from "@/components/base/theme.vue";
         </div>
       </div>
       <div class="tabs">tabs</div>
-      <div class="main">main</div>
+      <div class="main">
+        <RouterView />
+      </div>
     </div>
   </div>
 </template>

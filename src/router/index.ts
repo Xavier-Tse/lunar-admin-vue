@@ -12,6 +12,36 @@ const router = createRouter({
       path: '/admin',
       name: 'admin',
       component: () => import('../views/admin/index.vue'),
+      meta: {
+        title: '首页',
+      },
+      children: [
+        {
+          path: 'manage',
+          name: 'manage',
+          meta: {
+            title: '管理',
+          },
+          children: [
+            {
+              path: 'user',
+              name: 'user-list',
+              component: () => import('../views/admin/user/user-list.vue'),
+              meta: {
+                title: '用户列表',
+              },
+            },
+            {
+              path: 'role',
+              name: 'role-list',
+              component: () => import('../views/admin/user/role-list.vue'),
+              meta: {
+                title: '角色列表',
+              },
+            },
+          ],
+        },
+      ],
     },
   ],
 })
