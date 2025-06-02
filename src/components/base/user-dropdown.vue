@@ -15,9 +15,10 @@ function handleSelect(val: string) {
 
 <template>
   <a-dropdown @select="handleSelect">
-    <span class="user-dropdown">
+    <span class="user-dropdown" >
       <a-avatar :size="35">X</a-avatar>
       <span>xaviertse</span>
+      <icon-down />
     </span>
     <template #content>
       <a-doption value="user-list">用户列表</a-doption>

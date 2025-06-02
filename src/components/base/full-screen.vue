@@ -30,7 +30,7 @@ window.onresize = function() {
 </script>
 
 <template>
-  <span style="cursor: pointer;">
+  <span>
     <span @click="enterFullscreen" v-if="!isFull">
       <icon-fullscreen />
     </span>

@@ -23,7 +23,7 @@ initTheme()
 </script>
 
 <template>
-  <span style="cursor: pointer;">
+  <span>
     <IconSunFill @click="setTheme('dark')" v-if="theme === ''" />
     <IconMoonFill @click="setTheme('')" v-else />
   </span>

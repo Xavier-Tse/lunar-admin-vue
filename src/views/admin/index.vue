@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import Breadcrumb from "@/components/admin/breadcrumb.vue";
+import Logo from "@/components/admin/logo.vue";
 import FullScreen from "@/components/base/full-screen.vue";
 import Theme from "@/components/base/theme.vue";
 import UserDropdown from "@/components/base/user-dropdown.vue";
+import router from "@/router";
+import { IconHome } from "@arco-design/web-vue/es/icon";
+
+function goHome() {
+  router.push({ name: 'web' })
+}
 </script>
 
 <template>
   <div class="admin_view">
     <div class="aside">
-      <div class="logo">
-        <div class="left">
-          图片
-        </div>
-        <div class="right">
-          <div>后台管理系统</div>
-        </div>
-      </div>
+      <Logo />
       <div class="menu">
         菜单
       </div>
@@ -26,7 +26,9 @@ import UserDropdown from "@/components/base/user-dropdown.vue";
           <Breadcrumb />
         </div>
         <div class="actions">
-          <span>首页</span>
+          <span>
+            <IconHome @click="goHome" />
+          </span>
           <FullScreen />
           <Theme />
           <UserDropdown />
@@ -52,7 +54,7 @@ import UserDropdown from "@/components/base/user-dropdown.vue";
     border-right: 1px solid var(--color-neutral-2);
     height: 100vh;
 
-    .logo {
+    .logo-component {
       border-bottom: 1px solid var(--color-neutral-2);
       height: 90px;
       display: flex;
@@ -78,8 +80,14 @@ import UserDropdown from "@/components/base/user-dropdown.vue";
       .actions {
         >span {
           margin: 0 10px;
+          cursor: pointer;
+
           &:last-child {
             margin-right: 0;
+          }
+
+          &:hover {
+            color: rgb(var(--arcoblue-6));
           }
         }
       }
