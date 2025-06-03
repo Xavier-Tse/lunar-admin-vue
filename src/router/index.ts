@@ -17,6 +17,14 @@ const router = createRouter({
       },
       children: [
         {
+          path: 'data',
+          name: 'data',
+          meta: {
+            title: '数据统计',
+          },
+          component: () => import('../views/admin/data.vue'),
+        },
+        {
           path: 'manage',
           name: 'manage',
           meta: {

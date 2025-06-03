@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="logo-component">
+  <div class="lunar-logo">
     <div class="left">
       <img src="https://avatars.githubusercontent.com/u/201599432?s=200&v=4" alt="" />
     </div>
@@ -15,14 +15,18 @@
 </template>
 
 <style lang="less">
-.logo-component {
+.lunar-logo {
   .left{
     width: 80px;
     display: flex;
     justify-content: center;
+    transition: all 0.3s ease;
+    align-items: center;
+
     img {
       width: 50px;
       height: 50px;
+      transition: all 0.3s ease;
     }
   }
 
@@ -30,12 +34,34 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
+
     div:nth-child(1) {
       font-size: 17px;
       font-weight: 600;
     }
+
     div:nth-child(2) {
       font-size: 12px;
+    }
+  }
+}
+
+.collapsed {
+  .lunar-logo {
+    padding: 5px!important;
+
+    .left {
+      align-items: center;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .right {
+      display: none;
     }
   }
 }
