@@ -16,7 +16,7 @@ function goHome() {
 </script>
 
 <template>
-  <div class="admin_view">
+  <div class="admin-view">
     <div class="aside" :class="{ collapsed: collapsed }">
       <LunarLogo />
       <LunarMenu />
@@ -37,18 +37,23 @@ function goHome() {
       </div>
       <LunarTabs />
       <div class="main">
-        <RouterView />
+        <RouterView class="base-view" v-slot="{ Component: component }">
+          <Transition name="fade" mode="out-in">
+            <component :is="component" />
+          </Transition>
+        </RouterView>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="less">
-.admin_view {
+.admin-view {
   display: flex;
   width: 100%;
   background-color: var(--color-bg-1);
   color: var(--color-text-1);
+  overflow: hidden;
 
   .aside {
     width: 240px;
@@ -118,5 +123,40 @@ function goHome() {
       height: calc(100vh - 90px);
     }
   }
+}
+
+.base-view {
+  background-color: var(--color-bg-1);
+  border-radius: 5px;
+  padding: 20px;
+  height: calc(100vh - 130px);
+}
+
+
+// 组件刚开始离开
+.fade-leave-active {
+}
+
+// 组件离开结束
+.fade-leave-to {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+// 组件刚开始进入
+.fade-enter-active {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+// 组件进入完成
+.fade-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+// 正在进入和离开
+.fade-leave-active, .fade-enter-active {
+  transition: all 0.3s ease-out;
 }
 </style>
