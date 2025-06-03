@@ -34,7 +34,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: hidden;
 
     div:nth-child(1) {
       font-size: 17px;

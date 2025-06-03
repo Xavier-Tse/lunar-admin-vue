@@ -49,6 +49,7 @@ function goHome() {
 
 <style lang="less">
 .admin-view {
+  font-family: "LXGW WenKai", sans-serif;
   display: flex;
   width: 100%;
   background-color: var(--color-bg-1);

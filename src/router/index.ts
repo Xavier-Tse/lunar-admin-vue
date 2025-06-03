@@ -51,6 +51,10 @@ const router = createRouter({
             },
           ],
         },
+        {
+          path: "/:all(.*)",
+          component: ()=> import('../views/admin/404.vue'),
+        }
       ],
     },
   ],
