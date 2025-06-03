@@ -3,6 +3,7 @@ import Breadcrumb from "@/components/admin/breadcrumb.vue";
 import LunarLogo from "@/components/admin/lunar-logo.vue";
 import { collapsed } from "@/components/admin/lunar-menu-variables";
 import LunarMenu from "@/components/admin/lunar-menu.vue";
+import LunarTabs from "@/components/admin/lunar-tabs.vue";
 import FullScreen from "@/components/base/full-screen.vue";
 import Theme from "@/components/base/theme.vue";
 import UserDropdown from "@/components/base/user-dropdown.vue";
@@ -34,7 +35,7 @@ function goHome() {
           <UserDropdown />
         </div>
       </div>
-      <div class="tabs">tabs</div>
+      <LunarTabs />
       <div class="main">
         <RouterView />
       </div>
@@ -75,7 +76,7 @@ function goHome() {
     }
   }
 
-  .container {
+  >.container {
     width: calc(100% - 240px);
     transition: all 0.3s ease;
 
@@ -103,7 +104,7 @@ function goHome() {
       }
     }
 
-    .tabs{
+    .lunar-tabs{
       height: 30px;
       border-bottom: 1px solid var(--color-neutral-2);
       display: flex;
