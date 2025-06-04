@@ -86,7 +86,7 @@ function goHome() {
     width: calc(100% - 240px);
     transition: all 0.3s ease;
 
-    .head {
+    >.head {
       border-bottom: 1px solid var(--color-neutral-2);
       display: flex;
       justify-content: space-between;
@@ -135,8 +135,8 @@ function goHome() {
 
 
 // 组件刚开始离开
-.fade-leave-active {
-}
+// .fade-leave-active {
+// }
 
 // 组件离开结束
 .fade-leave-to {
